@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np 
 
 def savetocsv(matrix,filename):
-	df = pd.DataFrame(matrix)
-	df.to_csv(filename, index = False, header = False)
+    df = pd.DataFrame(matrix)
+    df.to_csv(filename, index = False, header = False)
 
 # task 1.1
 scores_data = pd.read_csv('D:\\HCMUT-K23\\HK232\\Linear Algebra\\BTL\\material for BTL\\datascores.csv', header=None)
@@ -69,13 +69,12 @@ def swapping(rank,teams):
     top_teams[0] = top_teams[1]
     top_teams[1] = temp
     rank = top_teams
-    rounded_rank = [round(value, 3) for value in rank]
-    return sorting(rank,teams)
+    rounded_rank = np.round(rank)
+    return sorting(rounded_rank,teams)
 
-task_111 = swapping(RanksColley,Teams)
-task_112 = swapping(RanksMassey,Teams)
-
-#lenh thuc thi file
+# # task_111 = swapping(RanksColley,Teams)
+# task_112 = swapping(RanksMassey,Teams)
+# #lenh thuc thi file
 
 # savetocsv(Ranking,'Task1_4.csv')
 # savetcsv(task19, 'Task 1_9.csv')
